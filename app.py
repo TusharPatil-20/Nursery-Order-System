@@ -55,8 +55,8 @@ def user_login():
         con.close()
 
         if user:
-            session.clear()                # VERY IMPORTANT
-            session["user"] = username     # SAVE LOGIN
+            session.clear()                
+            session["user"] = username     
             return redirect("/")
         else:
             error = "Invalid username or password"
