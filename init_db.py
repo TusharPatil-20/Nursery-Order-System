@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS plants (
 )
 """)
 
-# USERS TABLE
+# Users Table
 cur.execute("""
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
