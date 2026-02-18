@@ -137,7 +137,7 @@ plants = [
 ,
     ("flower",
  "Sunflower",
- 140,
+ 150,
  "sunflower.jpg",
  "Sunflower is a bright flowering plant. Scientific Name: Helianthus annuus. "
  "Climate: Warm. Sunlight: Full sun. Watering: Moderate. "
