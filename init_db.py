@@ -178,7 +178,7 @@ plants = [
 ,
     ("show",
  "Oak",
- 750,
+ 749,
  "oak.jpg",
  "Oak is a strong hardwood tree. Scientific Name: Quercus. "
  "Climate: Temperate. Sunlight: Full sun. Watering: Moderate. "
