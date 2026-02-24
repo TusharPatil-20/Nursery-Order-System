@@ -4,7 +4,7 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = "nursery_secret_key"
 
-# ---------------- DATABASE ----------------
+# ---------------- DATABASE -------------
 def db():
     return sqlite3.connect("database.db")
 
@@ -13,7 +13,7 @@ def db():
 def home():
     return render_template("home.html")
 
-# ---------------- CATEGORY ----------------
+# ---------------- CATEGORY --------------
 @app.route("/category")
 def category():
     return render_template("category.html")
