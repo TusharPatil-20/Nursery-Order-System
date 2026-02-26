@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Nursery Order System</title>
 
+    <!-- Main CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <header>
-        <h1>🌱 Nursery Order System</h1>
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="header">
+        <div class="logo">
+            🌱 <strong>Nursery Order System</strong>
+        </div>
 
-        <nav>
+        <nav class="nav">
             <a href="/">Home</a>
             <a href="/category">Nursery Category</a>
             <a href="/contact">Contact</a>
 
-            {% if session.get('user') %}
-
-            <a href="/logout">Logout</a>
-            {% else %}
-            <a href="/user_login">User Login</a>
-            {% endif %}
-
             {% if session.get('admin') %}
-            <a href="/admin">Admin</a>
-            <a href="/logout">Admin Logout</a>
+            <!-- Admin logged in -->
+            <a href="/admin">Admin Panel</a>
             {% else %}
+            <!-- Admin not logged in -->
             <a href="/admin-login">Admin Login</a>
             {% endif %}
         </nav>
-
     </header>
 
-    <main>
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
         {% block content %}
         {% endblock %}
     </main>
-
-    <footer>
-        <p>© 2026 Nursery Order System</p>
-    </footer>
 
 </body>
 
