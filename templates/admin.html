@@ -1,37 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
+
 <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
 
-<h2 style="text-align:center;">🧑‍💼 Admin Panel – Bookings</h2>
+<h2 class="admin-title">🧑‍💼 Admin Panel – Bookings</h2>
 
-<table border="1" cellpadding="10" cellspacing="0" style="margin:auto; background:white;">
-    <tr style="background:#2f855a; color:white;">
-        <th>ID</th>
-        <th>Plant</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>Qty</th>
-        <th>Total Price</th>
-        <th>Time</th>
-    </tr>
+{% if bookings and bookings|length > 0 %}
 
-    {% for b in bookings %}
-    <tr>
-        <td>{{ b[0] }}</td>
-        <td>{{ b[1] }}</td>
-        <td>{{ b[2] }}</td>
-        <td>{{ b[3] }}</td>
-        <td>{{ b[4] }}</td>
-        <td>{{ b[5] }}</td>
-        <td>₹{{ b[6] }}</td>
-        <td>{{ b[7] }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="table-wrapper">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Plant</th>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Qty</th>
+                <th>Total Price</th>
+                <th>Date & Time</th>
+            </tr>
+        </thead>
 
-{% if bookings|length == 0 %}
-<p style="text-align:center;">No bookings yet</p>
+        <tbody>
+            {% for b in bookings %}
+            <tr>
+                <td>{{ b[0] }}</td>
+                <td>{{ b[1] }}</td>
+                <td>{{ b[2] }}</td>
+                <td>{{ b[3] }}</td>
+                <td>{{ b[4] }}</td>
+                <td>{{ b[5] }}</td>
+                <td>₹{{ b[6] }}</td>
+                <td>{{ b[7] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% else %}
+<p class="no-data">📭 No bookings yet</p>
 {% endif %}
+
+<!-- Logout ONLY inside admin panel -->
+<div class="admin-actions">
+    <a href="/admin-logout" class="logout-btn">Logout</a>
+</div>
 
 {% endblock %}
