@@ -1,18 +1,20 @@
 {% extends "base.html" %}
-
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 
-<h2 style="text-align:center;">Admin Login</h2>
+<div class="login-container">
+    <h2>🛡️ Admin Login</h2>
 
-<form method="post" class="form">
-    <input type="text" name="username" placeholder="Admin Username" required>
-    <input type="password" name="password" placeholder="Admin Password" required>
+    <form method="post" class="login-form">
+        <input type="text" name="username" placeholder="Admin Username" required>
+        <input type="password" name="password" placeholder="Admin Password" required>
 
-    <button>Login</button>
+        <button type="submit">Login</button>
 
-    {% if error %}
-    <p style="color:rgb(218, 6, 6); text-align:center;">{{ error }}</p>
-    {% endif %}
-</form>
+        {% if error %}
+        <div class="error-box">{{ error }}</div>
+        {% endif %}
+    </form>
+</div>
+
 {% endblock %}
