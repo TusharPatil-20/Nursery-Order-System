@@ -1,81 +1,165 @@
-/* ===== PLANT LIST PAGE ===== */
+/* ===== PLANTS PAGE – FINAL PROFESSIONAL ===== */
 
-/* Page title */
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #086047;
-    font-size: 26px;
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)),
+        url("https://img.freepik.com/premium-photo/tropical-garden-with-tropical-plants-flowers_996379-4458.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Card layout */
+/* ===== PAGE HEADING ===== */
+.page-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    margin: 60px 0 55px;
+    letter-spacing: 1px;
+    color: #ecfdf5;
+
+    text-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(34, 197, 94, 0.6);
+
+    animation: titleReveal 0.9s ease;
+}
+
+/* Underline */
+.page-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 5px;
+    margin: 14px auto 0;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== CARDS ===== */
 .cards {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    padding: 40px 70px 90px;
 }
 
-/* Plant card */
+/* Card */
 .card {
-    background: white;
-    width: 250px;
-    padding: 16px;
-    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 22px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.25);
+    transition: all 0.45s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Hover animation */
+/* Hover lift */
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25);
+    transform: translateY(-14px) scale(1.05);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.4);
 }
 
-/* Plant image */
+/* Glow overlay */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            rgba(16, 185, 129, 0.18),
+            rgba(34, 197, 94, 0.18));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Image */
 .card img {
     width: 100%;
-    height: 165px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    transition: transform 0.4s ease;
 }
 
-/* Plant name */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Name */
 .card h3 {
-    margin: 14px 0 6px;
-    font-size: 20px;
-    color: #064e3b;
+    font-size: 22px;
+    font-weight: 700;
+    color: #065f46;
+    margin-bottom: 6px;
 }
 
 /* Price */
 .card p {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 600;
     color: #047857;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
 /* Button */
 .card a {
     display: inline-block;
-    padding: 9px 16px;
-    background: #2f855a;
+    padding: 11px 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
     color: white;
+    font-size: 15px;
+    font-weight: 700;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 2;
 }
 
-/* Button hover */
 .card a:hover {
-    background: #276749;
+    background: linear-gradient(135deg, #15803d, #166534);
+    transform: scale(1.12);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
 }
 
-/* Mobile view */
+/* ===== ANIMATION ===== */
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .card {
-        width: 90%;
+    .page-title {
+        font-size: 32px;
+        margin: 40px 0;
+    }
+
+    .cards {
+        padding: 25px;
+        gap: 28px;
     }
 }
