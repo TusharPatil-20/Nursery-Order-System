@@ -3,11 +3,13 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='booking_success.css') }}">
 
-<div class="success-box">
-    <h2>✅Booking Successful!</h2>
-    <p>Thank you for booking with our nursery 🌱</p>
-    <p>Your order has been placed successfully.</p>
-
-    <a href="/">Back to Home</a>
+<div class="page-wrapper">
+    <div class="success-box">
+        <h2>✅ Booking Successful!</h2>
+        <p>Thank you for booking with our nursery 🌱</p>
+        <p>Your order has been placed successfully.</p>
+        <a href="/">Back to Home</a>
+    </div>
 </div>
+
 {% endblock %}
