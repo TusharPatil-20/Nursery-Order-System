@@ -16,7 +16,7 @@ body {
 
 /* ===== HEADER ===== */
 header {
-    background: linear-gradient(135deg, #2f855a, #38a169);
+    background: linear-gradient(135deg, #2f885b, #38a169);
     color: white;
     padding: 18px 10px;
     text-align: center;
@@ -59,7 +59,7 @@ main {
 
 /* ===== FOOTER ===== */
 footer {
-    background: #1c2230;
+    background: #1c2232;
     color: white;
     text-align: center;
     padding: 12px;
