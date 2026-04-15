@@ -36,7 +36,7 @@ h2::after {
     height: 5px;
     margin: 16px auto 0;
     border-radius: 10px;
-    background: linear-gradient(90deg, #22c55e, #4ade80);
+    background: linear-gradient(90deg, #21d262, #4ade80);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
